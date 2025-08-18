@@ -71,3 +71,4 @@
 
 1. vscode内置图标：[codicon](https://microsoft.github.io/vscode-codicons/dist/codicon.html)
 2. 插件发布网站：[manage](https://marketplace.visualstudio.com/manage)
+3. 插件发布网站：[open-vsx](https://open-vsx.org/user-settings/extensions)
