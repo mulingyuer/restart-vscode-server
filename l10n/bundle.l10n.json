@@ -1,0 +1,7 @@
+{
+	"error.tsExtensionNotActive": "The TypeScript extension is not enabled or active. Enable and activate it first",
+	"error.tsServiceRestartFailed": "Failed to restart TypeScript service: {0}",
+	"info.tsServiceRestarted": "TypeScript service restarted",
+	"statusBar.restartTs.label": "Restart TS",
+	"statusBar.restartTs.tooltip": "Click to restart the TypeScript service"
+}

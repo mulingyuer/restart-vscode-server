@@ -1,0 +1,7 @@
+{
+	"extension.displayName": "Restart VSCode Server",
+	"extension.description": "A VS Code extension for restarting services",
+	"command.restartTsServer.title": "Restart TypeScript Service",
+	"configuration.title": "Restart VSCode Server",
+	"configuration.showRestartTsServerStatusButton.description": "Show the \"Restart TypeScript Service\" status bar button"
+}

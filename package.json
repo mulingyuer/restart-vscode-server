@@ -1,8 +1,8 @@
 {
 	"name": "restart-vscode-server",
-	"displayName": "Restart VSCode Server",
+	"displayName": "%extension.displayName%",
 	"version": "0.0.3",
-	"description": "A VSCode extension for restarting services.",
+	"description": "%extension.description%",
 	"categories": [
 		"Other",
 		"Programming Languages"
@@ -45,20 +45,21 @@
 		"webpack": "^5.105.4",
 		"webpack-cli": "^7.0.2"
 	},
+	"l10n": "./l10n",
 	"contributes": {
 		"commands": [
 			{
 				"command": "restart-vscode-server.restartTsServer",
-				"title": "重启 TypeScript 服务"
+				"title": "%command.restartTsServer.title%"
 			}
 		],
 		"configuration": {
-			"title": "Restart VSCode Server",
+			"title": "%configuration.title%",
 			"properties": {
 				"restart-vscode-server.showRestartTsServerStatusButton": {
 					"type": "boolean",
 					"default": true,
-					"description": "是否显示“重启 TypeScript 服务”状态栏按钮。"
+					"description": "%configuration.showRestartTsServerStatusButton.description%"
 				}
 			}
 		}

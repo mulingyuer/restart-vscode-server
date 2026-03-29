@@ -1,7 +1,7 @@
 /*
  * @Author: mulingyuer
  * @Date: 2026-03-29 16:10:23
- * @LastEditTime: 2026-03-29 19:02:33
+ * @LastEditTime: 2026-03-29 19:31:41
  * @LastEditors: mulingyuer
  * @Description: 重启 TypeScript 服务状态栏按钮
  * @FilePath: \restart-vscode-server\src\status-bar\restart-ts-server.ts
@@ -10,6 +10,7 @@
 import * as vscode from "vscode";
 import type { StatusBarButton } from "./types";
 import { RESTART_TS_SERVER_COMMAND } from "@/constant/command";
+import { EXTENSION_NAMESPACE } from "@/constant/extension";
 import { SHOW_TS_STATUS_BUTTON_SETTING } from "@/constant/status-bar";
 import { getExtensionConfiguration } from "@/utils/tools";
 import { debounce } from "@/utils/tools";
@@ -25,6 +26,7 @@ export class RestartTsServerButton implements StatusBarButton {
 	private contextDisposables: vscode.Disposable[] = [];
 	/** 设置监听器，与类同生命周期，不会被中途清空 */
 	private settingDisposables: vscode.Disposable[] = [];
+	private readonly settingKey = `${EXTENSION_NAMESPACE}.${SHOW_TS_STATUS_BUTTON_SETTING}`;
 	private isShown = false;
 
 	constructor() {
@@ -34,8 +36,8 @@ export class RestartTsServerButton implements StatusBarButton {
 		this.button.command = RESTART_TS_SERVER_COMMAND;
 
 		// 设置按钮文本和提示
-		this.button.text = `$(${"debug-restart"}) 重启TS`;
-		this.button.tooltip = "点击重启 TypeScript 服务";
+		this.button.text = `$(debug-restart) ${vscode.l10n.t("statusBar.restartTs.label")}`;
+		this.button.tooltip = vscode.l10n.t("statusBar.restartTs.tooltip");
 
 		// 初始化
 		this.init();
@@ -43,7 +45,7 @@ export class RestartTsServerButton implements StatusBarButton {
 		// 监听插件配置变化（后续用于控制是否显示）
 		vscode.workspace.onDidChangeConfiguration(
 			(event) => {
-				if (event.affectsConfiguration(SHOW_TS_STATUS_BUTTON_SETTING)) {
+				if (event.affectsConfiguration(this.settingKey)) {
 					this.updateVisibility();
 				}
 			},
