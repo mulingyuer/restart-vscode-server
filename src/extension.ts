@@ -1,21 +1,19 @@
 import * as vscode from "vscode";
-import { Command, StatusBar } from "@/core";
-
-/** 指令实例 */
-let command: Command;
-/** 状态栏实例 */
-let statusBar: StatusBar;
+// 指令
+import { createRestartTsServer } from "@/command/restart-ts-server";
+// 状态栏按钮
+import { RestartTsServerButton } from "@/status-bar/restart-ts-server";
 
 /** 插件激活钩子 */
 export function activate(context: vscode.ExtensionContext) {
-  // 注册命令
-  command = new Command(context);
-  // 注册状态栏
-  statusBar = new StatusBar(context);
+	// 指令
+	const restartTsServerDisposable = createRestartTsServer();
+	context.subscriptions.push(restartTsServerDisposable);
+
+	// 状态栏按钮
+	const restartTsServerButton = new RestartTsServerButton();
+	context.subscriptions.push(restartTsServerButton);
 }
 
 /** 插件卸载钩子 */
-export function deactivate() {
-  command.dispose();
-  statusBar.dispose();
-}
+export function deactivate() {}
