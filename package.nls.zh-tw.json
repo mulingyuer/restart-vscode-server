@@ -2,6 +2,8 @@
 	"extension.displayName": "重新啟動 VSCode 服務",
 	"extension.description": "一個用於重新啟動服務的 VS Code 擴充功能",
 	"command.restartTsServer.title": "重新啟動 TypeScript 服務",
+	"command.restartESLintService.title": "重新啟動 ESLint 服務",
 	"configuration.title": "重新啟動 VSCode 服務",
-	"configuration.showRestartTsServerStatusButton.description": "是否顯示「重新啟動 TypeScript 服務」狀態列按鈕"
+	"configuration.showRestartTsServerStatusButton.description": "是否顯示「重新啟動 TypeScript 服務」狀態列按鈕",
+	"configuration.showRestartESLintButton.description": "是否顯示「重新啟動 ESLint 服務」狀態列按鈕"
 }

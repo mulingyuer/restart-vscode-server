@@ -10,3 +10,6 @@
 
 /** 是否显示重启 TS 服务按钮 */
 export const SHOW_TS_STATUS_BUTTON_SETTING = "showRestartTsServerStatusButton";
+
+/** 是否显示重启 ESLint 服务按钮 */
+export const SHOW_ESLINT_STATUS_BUTTON_SETTING = "showRestartESLintButton";

@@ -1,7 +1,9 @@
 {
-	"extension.displayName": "重启 VSCode 服务",
-	"extension.description": "一个用于重启服务的 VS Code 扩展",
-	"command.restartTsServer.title": "重启 TypeScript 服务",
-	"configuration.title": "重启 VSCode 服务",
-	"configuration.showRestartTsServerStatusButton.description": "是否显示“重启 TypeScript 服务”状态栏按钮"
+	“extension.displayName”: “重启 VSCode 服务”,
+	“extension.description”: “一个用于重启服务的 VS Code 扩展”,
+	“command.restartTsServer.title”: “重启 TypeScript 服务”,
+	“command.restartESLintService.title”: “重启 ESLint 服务”,
+	“configuration.title”: “重启 VSCode 服务”,
+	“configuration.showRestartTsServerStatusButton.description”: “是否显示”重启 TypeScript 服务”状态栏按钮”,
+	“configuration.showRestartESLintButton.description”: “是否显示”重启 ESLint 服务”状态栏按钮”
 }

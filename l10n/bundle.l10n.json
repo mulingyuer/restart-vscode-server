@@ -3,5 +3,10 @@
 	"error.tsServiceRestartFailed": "Failed to restart TypeScript service: {0}",
 	"info.tsServiceRestarted": "TypeScript service restarted",
 	"statusBar.restartTs.label": "Restart TS",
-	"statusBar.restartTs.tooltip": "Click to restart the TypeScript service"
+	"statusBar.restartTs.tooltip": "Click to restart the TypeScript service",
+	"error.eslintExtensionNotActive": "The ESLint extension is not enabled or active. Enable and activate it first",
+	"error.eslintServiceRestartFailed": "Failed to restart ESLint service: {0}",
+	"info.eslintServiceRestarted": "ESLint service restarted",
+	"statusBar.restartESLint.label": "Restart ESLint",
+	"statusBar.restartESLint.tooltip": "Click to restart the ESLint service"
 }

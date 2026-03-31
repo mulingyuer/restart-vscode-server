@@ -51,6 +51,10 @@
 			{
 				"command": "restart-vscode-server.restartTsServer",
 				"title": "%command.restartTsServer.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartESLintService",
+				"title": "%command.restartESLintService.title%"
 			}
 		],
 		"configuration": {
@@ -60,6 +64,11 @@
 					"type": "boolean",
 					"default": true,
 					"description": "%configuration.showRestartTsServerStatusButton.description%"
+				},
+				"restart-vscode-server.showRestartESLintButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartESLintButton.description%"
 				}
 			}
 		}

@@ -10,3 +10,6 @@
 
 /** 重启 TypeScript 服务命令 */
 export const RESTART_TS_SERVER_COMMAND = "restart-vscode-server.restartTsServer";
+
+/** 重启 ESLint 服务命令 */
+export const RESTART_ESLINT_SERVICE_COMMAND = "restart-vscode-server.restartESLintService";

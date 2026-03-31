@@ -3,5 +3,10 @@
 	"error.tsServiceRestartFailed": "重新啟動 TypeScript 服務失敗：{0}",
 	"info.tsServiceRestarted": "TypeScript 服務已重新啟動",
 	"statusBar.restartTs.label": "重新啟動 TS",
-	"statusBar.restartTs.tooltip": "點擊以重新啟動 TypeScript 服務"
+	"statusBar.restartTs.tooltip": "點擊以重新啟動 TypeScript 服務",
+	"error.eslintExtensionNotActive": "ESLint 擴充功能未啟用或未啟動，請先啟用並啟動該擴充功能",
+	"error.eslintServiceRestartFailed": "重新啟動 ESLint 服務失敗：{0}",
+	"info.eslintServiceRestarted": "ESLint 服務已重新啟動",
+	"statusBar.restartESLint.label": "重新啟動 ESLint",
+	"statusBar.restartESLint.tooltip": "點擊以重新啟動 ESLint 服務"
 }
