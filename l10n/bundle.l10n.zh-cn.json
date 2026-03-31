@@ -8,5 +8,10 @@
 	"error.eslintServiceRestartFailed": "重启 ESLint 服务失败：{0}",
 	"info.eslintServiceRestarted": "ESLint 服务已重启",
 	"statusBar.restartESLint.label": "重启 ESLint",
-	"statusBar.restartESLint.tooltip": "点击重启 ESLint 服务"
+	"statusBar.restartESLint.tooltip": "点击重启 ESLint 服务",
+	"error.vueExtensionNotActive": "Vue 插件未启用或未激活，请先安装并启用 Vue 插件（Volar 或 Vetur）",
+	"error.vueServiceRestartFailed": "重启 Vue 服务失败：{0}",
+	"info.vueServiceRestarted": "Vue 服务已重启",
+	"statusBar.restartVue.label": "重启 Vue",
+	"statusBar.restartVue.tooltip": "点击重启 Vue 服务"
 }

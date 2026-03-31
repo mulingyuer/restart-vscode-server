@@ -3,7 +3,9 @@
 	"extension.description": "A VS Code extension for restarting services",
 	"command.restartTsServer.title": "Restart TypeScript Service",
 	"command.restartESLintService.title": "Restart ESLint Service",
+	"command.restartVueService.title": "Restart Vue Service",
 	"configuration.title": "Restart VSCode Server",
 	"configuration.showRestartTsServerStatusButton.description": "Show the \"Restart TypeScript Service\" status bar button",
-	"configuration.showRestartESLintButton.description": "Show the \"Restart ESLint Service\" status bar button"
+	"configuration.showRestartESLintButton.description": "Show the \"Restart ESLint Service\" status bar button",
+	"configuration.showRestartVueButton.description": "Show \"Restart Vue Service\" button in the status bar"
 }

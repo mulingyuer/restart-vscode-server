@@ -8,5 +8,10 @@
 	"error.eslintServiceRestartFailed": "Failed to restart ESLint service: {0}",
 	"info.eslintServiceRestarted": "ESLint service restarted",
 	"statusBar.restartESLint.label": "Restart ESLint",
-	"statusBar.restartESLint.tooltip": "Click to restart the ESLint service"
+	"statusBar.restartESLint.tooltip": "Click to restart the ESLint service",
+	"error.vueExtensionNotActive": "Vue extension is not enabled or activated. Please install and enable a Vue extension (Volar or Vetur) first",
+	"error.vueServiceRestartFailed": "Failed to restart Vue service: {0}",
+	"info.vueServiceRestarted": "Vue service has been restarted",
+	"statusBar.restartVue.label": "Restart Vue",
+	"statusBar.restartVue.tooltip": "Click to restart Vue service"
 }
