@@ -1,21 +1,59 @@
 import * as vscode from "vscode";
-import { Command, StatusBar } from "@/core";
-
-/** 指令实例 */
-let command: Command;
-/** 状态栏实例 */
-let statusBar: StatusBar;
+// 指令
+import { createRestartTsServer } from "@/command/restart-ts-server";
+import { createRestartESLintService } from "@/command/restart-eslint-service";
+import { createRestartVueService } from "@/command/restart-vue-service";
+import { createRestartOXCService } from "@/command/restart-oxc-service";
+import { createRestartVscodeWindow } from "@/command/restart-vscode-window";
+import { createRestartExtensionService } from "@/command/restart-extension-service";
+// 状态栏按钮
+import { RestartTsServerButton } from "@/status-bar/restart-ts-server";
+import { RestartESLintServiceButton } from "@/status-bar/restart-eslint-service";
+import { RestartVueServiceButton } from "@/status-bar/restart-vue-service";
+import { RestartOXCServiceButton } from "@/status-bar/restart-oxc-service";
+import { RestartVscodeWindowButton } from "@/status-bar/restart-vscode-window";
+import { RestartExtensionServiceButton } from "@/status-bar/restart-extension-service";
 
 /** 插件激活钩子 */
 export function activate(context: vscode.ExtensionContext) {
-  // 注册命令
-  command = new Command(context);
-  // 注册状态栏
-  statusBar = new StatusBar(context);
+	// 指令
+	const restartTsServerDisposable = createRestartTsServer();
+	context.subscriptions.push(restartTsServerDisposable);
+
+	const restartESLintServiceDisposable = createRestartESLintService();
+	context.subscriptions.push(restartESLintServiceDisposable);
+
+	const restartVueServiceDisposable = createRestartVueService();
+	context.subscriptions.push(restartVueServiceDisposable);
+
+	const restartOXCServiceDisposable = createRestartOXCService();
+	context.subscriptions.push(restartOXCServiceDisposable);
+
+	const restartVscodeWindowDisposable = createRestartVscodeWindow();
+	context.subscriptions.push(restartVscodeWindowDisposable);
+
+	const restartExtensionServiceDisposable = createRestartExtensionService();
+	context.subscriptions.push(restartExtensionServiceDisposable);
+
+	// 状态栏按钮
+	const restartTsServerButton = new RestartTsServerButton();
+	context.subscriptions.push(restartTsServerButton);
+
+	const restartESLintServiceButton = new RestartESLintServiceButton();
+	context.subscriptions.push(restartESLintServiceButton);
+
+	const restartVueServiceButton = new RestartVueServiceButton();
+	context.subscriptions.push(restartVueServiceButton);
+
+	const restartOXCServiceButton = new RestartOXCServiceButton();
+	context.subscriptions.push(restartOXCServiceButton);
+
+	const restartVscodeWindowButton = new RestartVscodeWindowButton();
+	context.subscriptions.push(restartVscodeWindowButton);
+
+	const restartExtensionServiceButton = new RestartExtensionServiceButton();
+	context.subscriptions.push(restartExtensionServiceButton);
 }
 
 /** 插件卸载钩子 */
-export function deactivate() {
-  command.dispose();
-  statusBar.dispose();
-}
+export function deactivate() {}

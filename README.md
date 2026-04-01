@@ -1,74 +1,94 @@
-# restart-vscode-server
+﻿# restart-vscode-server
 
-这是一个轻量级的 VS Code 扩展，旨在通过一键重启各种服务来简化您的开发工作流程。当您遇到由于缓存、配置更改或服务无响应导致的问题时，无需再完全重启整个编辑器，只需点击一下即可快速恢复。
+`restart-vscode-server` 是一个轻量的 VS Code 扩展，用于快速重启常见语言服务与编辑器相关服务，减少因为缓存、配置更新或服务异常导致的开发中断。
 
-## ✨ 主要功能
+## 功能与命令
 
-本插件为您提供了一系列独立的重启命令，您可以在需要时精准地重启特定服务：
+在 VS Code 中按 `Ctrl+Shift+P`（macOS 为 `Cmd+Shift+P`）打开命令面板后，可输入以下命令调用对应功能：
 
-1. 🔄 **重启 VS Code 窗口 (Reload Window):** 快速重载 VS Code 窗口，应用新的配置或解决界面异常。
-2. 🔄 **重启 TypeScript 服务 (Restart TS Server):** 解决类型提示错误、自动补全失效等 TS 相关问题。
-3. 🔄 **重启 ESLint 服务 (Restart ESLint Server):** 当 ESLint 规则更新或插件行为异常时，快速重启服务以应用更改。
-4. 🔄 **重启 Vue (Official) 服务 (Restart Vue Server):** 专为 Vue 开发者设计，解决模板语法高亮、组件定义跳转等问题。
+1. 重启 TypeScript 服务：`Restart TypeScript Service`
+2. 重启 ESLint 服务：`Restart ESLint Service`
+3. 重启 Vue 服务（兼容 Volar / Vetur）：`Restart Vue Service`
+4. 重启 OXC 服务（Lint / Formatter）：`Restart OXC Service`
+5. 重启 VS Code 窗口：`Restart VS Code Window`
+6. 重启插件扩展服务（Extension Host）：`Restart Extension Service`
 
-## 🚀 如何使用
+## 安装
 
-您可以通过两种便捷的方式来执行重启命令：
+你可以通过 VS Code 扩展市场搜索 `restart-vscode-server` 安装。
 
-### 1. 状态栏快捷按钮
+![安装展示](./docs/images/installation_display.png)
 
-插件会在 VS Code 窗口底部的状态栏添加快捷操作按钮。
+## 使用方式
 
-![左侧状态按钮](./docs/images/left_status_button.png)
+### 状态栏按钮
 
-![右侧状态按钮](./docs/images/right_status_button.png)
+扩展会在状态栏提供快捷按钮，支持一键重启服务。
+
+![左侧状态栏按钮](./docs/images/left_status_button.png)
+
+![右侧状态栏按钮](./docs/images/right_status_button.png)
 
 ### 命令面板
 
-按下快捷键 `Ctrl+Shift+P` (或 macOS 上的 `Cmd+Shift+P`) 打开命令面板，然后输入 `重启` 关键字，即可看到所有可用的重启命令。
+按 `Ctrl+Shift+P`（macOS 为 `Cmd+Shift+P`）打开命令面板，输入 `Restart` 或 `重启`，即可筛选并执行对应重启命令。
 
 ![命令面板](./docs/images/command_panel.png)
 
-## ⚙️ 插件配置
+## 状态栏显示规则
 
-您可以根据个人需求，精细化地控制每个功能的启用与否。
+为避免不必要的按钮干扰，部分按钮会根据项目上下文自动显示：
 
-1. 通过设置界面配置
-      - 打开 VS Code 设置 (`Ctrl + ,`)。
-      - 搜索 `restart-vscode-server`。
-      - 勾选或取消勾选您需要启用/禁用的功能。
+1. TypeScript：检测到 TS 文件或 `tsconfig/jsconfig` 后显示
+2. ESLint：检测到 ESLint 配置后显示
+3. Vue：检测到 Vue 文件且安装 Volar/Vetur 后显示
+4. OXC：检测到 OXC 配置且安装 OXC 扩展后显示
+5. 重启 VS Code 窗口：默认显示，可在设置中关闭
+6. 重启插件扩展服务：默认显示，可在设置中关闭。适用于多个插件同时异常，或某些没有单独“重启服务”命令的插件出现故障时，通过重启 Extension Host 进行统一恢复。
 
-    ![插件设置](./docs/images/plugin_setting.png)
+## 反馈与共建
 
-2. 通过 settings.json 配置
+欢迎提交你希望支持“快速重启”的插件服务。你可以在仓库 `Issues` 中提出需求或建议：
 
-    如果您偏爱使用 settings.json 进行配置，可以添加以下代码并按需修改
+- Issues: <https://github.com/mulingyuer/restart-vscode-server/issues>
 
-    ```json
-    {
-      // 设置为 true 来启用“重启 VS Code 窗口”功能
-      "restart-vscode-server.enableReloadWindow": false,
+## 配置项
 
-      // 设置为 true 来启用“重启 ESLint 服务”功能
-      "restart-vscode-server.enableRestartEslintServer": false,
+你可以在 VS Code 设置中搜索 `restart-vscode-server`，或直接在 `settings.json` 配置：
 
-      // 设置为 true 来启用“重启 TypeScript 服务”功能
-      "restart-vscode-server.enableRestartTsServer": false,
+```json
+{
+	// 是否显示“重启 TypeScript 服务”状态栏按钮
+	"restart-vscode-server.showRestartTsServerStatusButton": true,
 
-      // 设置为 true 来启用“重启 Vue (Official) 服务”功能
-      "restart-vscode-server.enableRestartVueServer": false
-    }
-    ```
+	// 是否显示“重启 ESLint 服务”状态栏按钮
+	"restart-vscode-server.showRestartESLintButton": true,
 
-## 🙏 鸣谢
+	// 是否显示“重启 Vue 服务”状态栏按钮
+	"restart-vscode-server.showRestartVueButton": true,
 
-本插件的开发受到了以下优秀项目的启发，并参考了其部分实现。在此向它们的作者表示诚挚的感谢！
+	// 是否显示“重启 OXC 服务”状态栏按钮
+	"restart-vscode-server.showRestartOXCButton": true,
 
-- 重启ts和eslint服务插件：[Restart TS/ESLint Server](https://marketplace.visualstudio.com/items?itemName=acoreyj.restart-ts-eslint-server)
-- 重启vscode插件：[Reload](https://marketplace.visualstudio.com/items?itemName=natqe.reload)
+	// 是否显示“重启 VS Code 窗口”状态栏按钮
+	"restart-vscode-server.showRestartVscodeWindowButton": true,
 
-## 🔗 相关资源
+	// 是否显示“重启插件扩展服务”状态栏按钮
+	"restart-vscode-server.showRestartExtensionServiceButton": true
+}
+```
 
-1. vscode内置图标：[codicon](https://microsoft.github.io/vscode-codicons/dist/codicon.html)
-2. 插件发布网站：[manage](https://marketplace.visualstudio.com/manage)
-3. 插件发布网站：[open-vsx](https://open-vsx.org/user-settings/extensions)
+![插件设置](./docs/images/plugin_setting.png)
+
+## 鸣谢
+
+本插件的开发受到了以下优秀项目的启发，并参考了其部分实现。在此向它们的作者表示诚挚感谢：
+
+- 重启 TS 和 ESLint 服务插件：[Restart TS/ESLint Server](https://marketplace.visualstudio.com/items?itemName=acoreyj.restart-ts-eslint-server)
+- 重启 VS Code 插件：[Reload](https://marketplace.visualstudio.com/items?itemName=natqe.reload)
+
+## 相关资源
+
+1. VS Code 内置图标库：[codicon](https://microsoft.github.io/vscode-codicons/dist/codicon.html)
+2. 插件发布管理页面：[manage](https://marketplace.visualstudio.com/manage)
+3. Open VSX 发布页面：[open-vsx](https://open-vsx.org/user-settings/extensions)

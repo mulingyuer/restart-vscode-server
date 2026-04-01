@@ -1,50 +1,43 @@
 /*
  * @Author: mulingyuer
- * @Date: 2025-07-14 22:04:49
- * @LastEditTime: 2025-07-16 17:06:32
+ * @Date: 2026-03-29 15:37:39
+ * @LastEditTime: 2026-03-29 17:44:05
  * @LastEditors: mulingyuer
  * @Description: 工具方法
  * @FilePath: \restart-vscode-server\src\utils\tools.ts
  * 怎么可能会有bug！！！
  */
 import * as vscode from "vscode";
-import {
-  EXTENSION_NAME,
-  LEFT_STATUS_BAR_PRIORITY,
-  PACKAGE_JSON,
-} from "@/constant";
+import { EXTENSION_NAMESPACE } from "@/constant/extension";
 
-/** 拼接带命名空间的字符串 */
-export function joinNamespaceStr(str: string, namespace?: string) {
-  namespace = namespace ?? EXTENSION_NAME;
+/** 判断插件是否启用并激活 */
+export async function isExtensionEnabledAndActive(extensionId: string): Promise<boolean> {
+	const extension = vscode.extensions.getExtension(extensionId);
+	if (!extension) return false;
 
-  return `${namespace}.${str}`;
+	if (!extension.isActive) {
+		await extension.activate();
+	}
+
+	return extension.isActive;
 }
 
-/** 通过key获取package中配置的extensionCommands命令 */
-export function getExtensionCommand(
-  key: keyof (typeof PACKAGE_JSON)["extensionCommands"]
-): string {
-  return PACKAGE_JSON.extensionCommands[key] ?? "";
+/** 获取插件的配置 */
+export function getExtensionConfiguration<T>(section: string, defaultValue: T): T | undefined {
+	return vscode.workspace.getConfiguration(EXTENSION_NAMESPACE).get<T>(section, defaultValue);
 }
 
-/** 通过key获取package中配置的extensionConfig配置key */
-export function getExtensionConfigFullPath(
-  key: keyof (typeof PACKAGE_JSON)["extensionConfigFullPath"]
-) {
-  return PACKAGE_JSON.extensionConfigFullPath[key] ?? "";
-}
+/** 防抖 */
+export function debounce<T extends (...args: any[]) => any>(
+	fn: T,
+	delay: number
+): (...args: Parameters<T>) => void {
+	let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
-/** 获取状态栏按钮优先级，最先调用谁优先级最大 */
-export const getStatusBarPriority = (() => {
-  let maxPriority = LEFT_STATUS_BAR_PRIORITY;
-
-  return function getStatusBarPriority() {
-    return maxPriority--;
-  };
-})();
-
-/** 获取插件配置 */
-export function getExtensionConfig(): vscode.WorkspaceConfiguration {
-  return vscode.workspace.getConfiguration(EXTENSION_NAME);
+	return function (this: any, ...args: Parameters<T>) {
+		if (timeoutId) clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => {
+			fn.apply(this, args);
+		}, delay);
+	};
 }

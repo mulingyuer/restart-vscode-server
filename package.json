@@ -1,133 +1,123 @@
 {
-  "name": "restart-vscode-server",
-  "displayName": "Restart VSCode Server",
-  "description": "A VSCode extension for restarting services.",
-  "publisher": "mulingyuer",
-  "version": "0.0.3",
-  "engines": {
-    "vscode": "^1.102.0"
-  },
-  "license": "SEE LICENSE IN LICENSE",
-  "icon": "public/icon.png",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mulingyuer/restart-vscode-server"
-  },
-  "bugs": {
-    "url": "https://github.com/mulingyuer/restart-vscode-server/issues"
-  },
-  "categories": [
-    "Programming Languages",
-    "Other"
-  ],
-  "galleryBanner": {
-    "color": "#004284",
-    "theme": "dark"
-  },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "./dist/extension.js",
-  "extensionCommands": {
-    "restartTsServer": "restart-vscode-server.restartTsServer",
-    "restartEslintServer": "restart-vscode-server.restartEslintServer",
-    "restartVueServer": "restart-vscode-server.restartVueServer",
-    "reloadWindow": "restart-vscode-server.reloadWindow"
-  },
-  "extensionConfigFullPath": {
-    "restartTsServer": "restart-vscode-server.enableRestartTsServer",
-    "restartEslintServer": "restart-vscode-server.enableRestartEslintServer",
-    "restartVueServer": "restart-vscode-server.enableRestartVueServer",
-    "reloadWindow": "restart-vscode-server.enableReloadWindow"
-  },
-  "contributes": {
-    "commands": [
-      {
-        "command": "restart-vscode-server.restartTsServer",
-        "title": "重启 TypeScript 服务"
-      },
-      {
-        "command": "restart-vscode-server.restartEslintServer",
-        "title": "重启 ESLint 服务"
-      },
-      {
-        "command": "restart-vscode-server.restartVueServer",
-        "title": "重启 Vue 服务"
-      },
-      {
-        "command": "restart-vscode-server.reloadWindow",
-        "title": "重启 VSCode"
-      }
-    ],
-    "menus": {
-      "commandPalette": [
-        {
-          "command": "restart-vscode-server.restartTsServer",
-          "when": "config.restart-vscode-server.enableRestartTsServer"
-        },
-        {
-          "command": "restart-vscode-server.restartEslintServer",
-          "when": "config.restart-vscode-server.enableRestartEslintServer"
-        },
-        {
-          "command": "restart-vscode-server.restartVueServer",
-          "when": "config.restart-vscode-server.enableRestartVueServer"
-        },
-        {
-          "command": "restart-vscode-server.reloadWindow",
-          "when": "config.restart-vscode-server.enableReloadWindow"
-        }
-      ]
-    },
-    "configuration": {
-      "title": "Restart VSCode Server",
-      "properties": {
-        "restart-vscode-server.enableRestartTsServer": {
-          "type": "boolean",
-          "default": true,
-          "description": "启用重启 TypeScript 服务"
-        },
-        "restart-vscode-server.enableRestartEslintServer": {
-          "type": "boolean",
-          "default": true,
-          "description": "启用重启 ESLint 服务"
-        },
-        "restart-vscode-server.enableRestartVueServer": {
-          "type": "boolean",
-          "default": true,
-          "description": "启用重启 Vue 服务"
-        },
-        "restart-vscode-server.enableReloadWindow": {
-          "type": "boolean",
-          "default": true,
-          "description": "启用重启 VSCode"
-        }
-      }
-    }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.102.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "@typescript-eslint/eslint-plugin": "^8.31.1",
-    "@typescript-eslint/parser": "^8.31.1",
-    "eslint": "^9.25.1",
-    "typescript": "^5.8.3",
-    "ts-loader": "^9.5.2",
-    "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1",
-    "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
-  }
+	"name": "restart-vscode-server",
+	"displayName": "%extension.displayName%",
+	"version": "0.1.0",
+	"description": "%extension.description%",
+	"categories": [
+		"Other",
+		"Programming Languages"
+	],
+	"bugs": {
+		"url": "https://github.com/mulingyuer/restart-vscode-server/issues"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mulingyuer/restart-vscode-server"
+	},
+	"publisher": "mulingyuer",
+	"main": "./dist/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.10",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.75.0",
+		"@typescript-eslint/eslint-plugin": "^8.31.1",
+		"@typescript-eslint/parser": "^8.31.1",
+		"@vscode/test-cli": "^0.0.11",
+		"@vscode/test-electron": "^2.5.2",
+		"eslint": "^9.25.1",
+		"oxfmt": "^0.42.0",
+		"ts-loader": "^9.5.4",
+		"typescript": "^6.0.2",
+		"webpack": "^5.105.4",
+		"webpack-cli": "^7.0.2"
+	},
+	"l10n": "./l10n",
+	"contributes": {
+		"commands": [
+			{
+				"command": "restart-vscode-server.restartTsServer",
+				"title": "%command.restartTsServer.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartESLintService",
+				"title": "%command.restartESLintService.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartVueService",
+				"title": "%command.restartVueService.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartOXCService",
+				"title": "%command.restartOXCService.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartVscodeWindow",
+				"title": "%command.restartVscodeWindow.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartExtensionService",
+				"title": "%command.restartExtensionService.title%"
+			}
+		],
+		"configuration": {
+			"title": "%configuration.title%",
+			"properties": {
+				"restart-vscode-server.showRestartTsServerStatusButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartTsServerStatusButton.description%"
+				},
+				"restart-vscode-server.showRestartESLintButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartESLintButton.description%"
+				},
+				"restart-vscode-server.showRestartVueButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartVueButton.description%"
+				},
+				"restart-vscode-server.showRestartOXCButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartOXCButton.description%"
+				},
+				"restart-vscode-server.showRestartVscodeWindowButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartVscodeWindowButton.description%"
+				},
+				"restart-vscode-server.showRestartExtensionServiceButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartExtensionServiceButton.description%"
+				}
+			}
+		}
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"icon": "public/icon.png",
+	"galleryBanner": {
+		"color": "#004284",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.75.0"
+	}
 }
