@@ -67,6 +67,10 @@
 			{
 				"command": "restart-vscode-server.restartVscodeWindow",
 				"title": "%command.restartVscodeWindow.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartExtensionService",
+				"title": "%command.restartExtensionService.title%"
 			}
 		],
 		"configuration": {
@@ -96,6 +100,11 @@
 					"type": "boolean",
 					"default": true,
 					"description": "%configuration.showRestartVscodeWindowButton.description%"
+				},
+				"restart-vscode-server.showRestartExtensionServiceButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartExtensionServiceButton.description%"
 				}
 			}
 		}

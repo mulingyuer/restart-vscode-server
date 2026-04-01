@@ -6,10 +6,12 @@
 	"command.restartVueService.title": "重启 Vue 服务",
 	"command.restartOXCService.title": "重启 OXC 服务",
 	"command.restartVscodeWindow.title": "重启 VS Code 窗口",
+	"command.restartExtensionService.title": "重启插件服务",
 	"configuration.title": "重启 VSCode 服务",
 	"configuration.showRestartTsServerStatusButton.description": "是否显示 “重启 TypeScript 服务” 状态栏按钮",
 	"configuration.showRestartESLintButton.description": "是否显示 “重启 ESLint 服务” 状态栏按钮",
 	"configuration.showRestartVueButton.description": "是否显示 “重启 Vue 服务” 状态栏按钮",
 	"configuration.showRestartOXCButton.description": "是否显示 “重启 OXC 服务” 状态栏按钮",
-	"configuration.showRestartVscodeWindowButton.description": "是否显示“重启 VS Code 窗口”状态栏按钮"
+	"configuration.showRestartVscodeWindowButton.description": "是否显示“重启 VS Code 窗口”状态栏按钮",
+	"configuration.showRestartExtensionServiceButton.description": "是否显示“重启插件服务”状态栏按钮"
 }

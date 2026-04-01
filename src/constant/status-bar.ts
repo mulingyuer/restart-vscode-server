@@ -22,3 +22,6 @@ export const SHOW_OXC_STATUS_BUTTON_SETTING = "showRestartOXCButton";
 
 /** 是否显示重启 VS Code 窗口按钮 */
 export const SHOW_RESTART_VSCODE_WINDOW_BUTTON_SETTING = "showRestartVscodeWindowButton";
+
+/** 是否显示重启插件服务按钮 */
+export const SHOW_RESTART_EXTENSION_SERVICE_BUTTON_SETTING = "showRestartExtensionServiceButton";

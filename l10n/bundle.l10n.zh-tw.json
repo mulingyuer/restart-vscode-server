@@ -21,5 +21,9 @@
 	"statusBar.restartOXC.tooltip": "點擊重啟 OXC 服務",
 	"error.vscodeWindowRestartFailed": "重啟 VS Code 視窗失敗：{0}",
 	"statusBar.restartVscodeWindow.label": "重啟",
-	"statusBar.restartVscodeWindow.tooltip": "點擊重啟 VS Code 視窗"
+	"statusBar.restartVscodeWindow.tooltip": "點擊重啟 VS Code 視窗",
+	"info.extensionServiceRestarted": "插件服務已重啟",
+	"error.extensionServiceRestartFailed": "重啟插件服務失敗：{0}",
+	"statusBar.restartExtensionService.label": "重啟插件",
+	"statusBar.restartExtensionService.tooltip": "點擊重啟插件服務"
 }

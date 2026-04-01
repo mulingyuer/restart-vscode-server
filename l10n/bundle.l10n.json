@@ -21,5 +21,9 @@
 	"statusBar.restartOXC.tooltip": "Click to restart OXC service",
 	"error.vscodeWindowRestartFailed": "Failed to restart VS Code window: {0}",
 	"statusBar.restartVscodeWindow.label": "Reload",
-	"statusBar.restartVscodeWindow.tooltip": "Click to reload VS Code window"
+	"statusBar.restartVscodeWindow.tooltip": "Click to reload VS Code window",
+	"info.extensionServiceRestarted": "Extension service has been restarted",
+	"error.extensionServiceRestartFailed": "Failed to restart extension service: {0}",
+	"statusBar.restartExtensionService.label": "Restart Ext",
+	"statusBar.restartExtensionService.tooltip": "Click to restart extension service"
 }

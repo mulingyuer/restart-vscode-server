@@ -22,3 +22,7 @@ export const RESTART_OXC_SERVICE_COMMAND = "restart-vscode-server.restartOXCServ
 
 /** 重启 VS Code 窗口命令 */
 export const RESTART_VSCODE_WINDOW_COMMAND = "restart-vscode-server.restartVscodeWindow";
+
+/** 重启插件服务命令 */
+export const RESTART_EXTENSION_SERVICE_COMMAND =
+	"restart-vscode-server.restartExtensionService";

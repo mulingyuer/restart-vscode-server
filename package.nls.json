@@ -6,10 +6,12 @@
 	"command.restartVueService.title": "Restart Vue Service",
 	"command.restartOXCService.title": "Restart OXC Service",
 	"command.restartVscodeWindow.title": "Restart VS Code Window",
+	"command.restartExtensionService.title": "Restart Extension Service",
 	"configuration.title": "Restart VSCode Server",
 	"configuration.showRestartTsServerStatusButton.description": "Show the \"Restart TypeScript Service\" status bar button",
 	"configuration.showRestartESLintButton.description": "Show the \"Restart ESLint Service\" status bar button",
 	"configuration.showRestartVueButton.description": "Show \"Restart Vue Service\" button in the status bar",
 	"configuration.showRestartOXCButton.description": "Show \"Restart OXC Service\" button in the status bar",
-	"configuration.showRestartVscodeWindowButton.description": "Show \"Restart VS Code Window\" button in the status bar"
+	"configuration.showRestartVscodeWindowButton.description": "Show \"Restart VS Code Window\" button in the status bar",
+	"configuration.showRestartExtensionServiceButton.description": "Show \"Restart Extension Service\" button in the status bar"
 }
