@@ -4,8 +4,10 @@
 	"command.restartTsServer.title": "重新啟動 TypeScript 服務",
 	"command.restartESLintService.title": "重新啟動 ESLint 服務",
 	"command.restartVueService.title": "重啟 Vue 服務",
+	"command.restartOXCService.title": "重啟 OXC 服務",
 	"configuration.title": "重新啟動 VSCode 服務",
 	"configuration.showRestartTsServerStatusButton.description": "是否顯示「重新啟動 TypeScript 服務」狀態列按鈕",
 	"configuration.showRestartESLintButton.description": "是否顯示「重新啟動 ESLint 服務」狀態列按鈕",
-	"configuration.showRestartVueButton.description": "是否顯示「重啟 Vue 服務」狀態列按鈕"
+	"configuration.showRestartVueButton.description": "是否顯示「重啟 Vue 服務」狀態列按鈕",
+	"configuration.showRestartOXCButton.description": "是否顯示「重啟 OXC 服務」狀態列按鈕"
 }

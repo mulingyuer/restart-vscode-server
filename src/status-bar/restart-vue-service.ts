@@ -1,7 +1,7 @@
 /*
  * @Author: mulingyuer
  * @Date: 2026-03-31 00:00:00
- * @LastEditTime: 2026-03-31 00:00:00
+ * @LastEditTime: 2026-04-01 20:55:45
  * @LastEditors: mulingyuer
  * @Description: 重启 Vue 服务状态栏按钮
  * @FilePath: \restart-vscode-server\src\status-bar\restart-vue-service.ts
@@ -77,18 +77,19 @@ export class RestartVueServiceButton implements StatusBarButton {
 		if (this.contextDisposables.length > 0) return;
 
 		// 注册文件监听（仅监听创建）
-		const watcher = vscode.workspace.createFileSystemWatcher(
-			VUE_FILE_GLOB,
-			false,
-			true,
-			true
-		);
+		const watcher = vscode.workspace.createFileSystemWatcher(VUE_FILE_GLOB, false, true, true);
 		watcher.onDidCreate(this.updateVisibility, this, this.contextDisposables);
 		this.contextDisposables.push(watcher);
 
 		// 注册事件监听
 		vscode.window.onDidChangeActiveTextEditor(this.updateVisibility, this, this.contextDisposables);
 		vscode.workspace.onDidOpenTextDocument(this.updateVisibility, this, this.contextDisposables);
+	}
+
+	/** 清理上下文监听器 */
+	private clearContextWatchers(): void {
+		this.contextDisposables.forEach((d) => d.dispose());
+		this.contextDisposables = [];
 	}
 
 	show(): void {
@@ -103,8 +104,7 @@ export class RestartVueServiceButton implements StatusBarButton {
 
 	dispose(): void {
 		this.button.dispose();
-		this.contextDisposables.forEach((d) => d.dispose());
-		this.contextDisposables = [];
+		this.clearContextWatchers();
 		this.settingDisposables.forEach((d) => d.dispose());
 		this.settingDisposables = [];
 	}
@@ -139,11 +139,7 @@ export class RestartVueServiceButton implements StatusBarButton {
 		}
 
 		// 3) 工作区中存在 .vue 文件时显示
-		const files = await vscode.workspace.findFiles(
-			VUE_FILE_GLOB,
-			COMMON_EXCLUDE_GLOB,
-			1
-		);
+		const files = await vscode.workspace.findFiles(VUE_FILE_GLOB, COMMON_EXCLUDE_GLOB, 1);
 		return files.length > 0;
 	}
 
@@ -159,6 +155,8 @@ export class RestartVueServiceButton implements StatusBarButton {
 			const configAllows = getExtensionConfiguration<boolean>(SHOW_VUE_STATUS_BUTTON_SETTING, true);
 			if (configAllows) {
 				this.registerContextWatchers();
+			} else {
+				this.clearContextWatchers();
 			}
 		}
 	}, 150);

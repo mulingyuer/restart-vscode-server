@@ -13,5 +13,10 @@
 	"error.vueServiceRestartFailed": "Failed to restart Vue service: {0}",
 	"info.vueServiceRestarted": "Vue service has been restarted",
 	"statusBar.restartVue.label": "Restart Vue",
-	"statusBar.restartVue.tooltip": "Click to restart Vue service"
+	"statusBar.restartVue.tooltip": "Click to restart Vue service",
+	"error.oxcExtensionNotActive": "OXC extension is not enabled or active. Please install and enable OXC extension first",
+	"error.oxcServiceRestartFailed": "Failed to restart OXC service: {0}",
+	"info.oxcServiceRestarted": "OXC service has been restarted",
+	"statusBar.restartOXC.label": "Restart OXC",
+	"statusBar.restartOXC.tooltip": "Click to restart OXC service"
 }

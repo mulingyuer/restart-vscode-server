@@ -59,6 +59,10 @@
 			{
 				"command": "restart-vscode-server.restartVueService",
 				"title": "%command.restartVueService.title%"
+			},
+			{
+				"command": "restart-vscode-server.restartOXCService",
+				"title": "%command.restartOXCService.title%"
 			}
 		],
 		"configuration": {
@@ -78,6 +82,11 @@
 					"type": "boolean",
 					"default": true,
 					"description": "%configuration.showRestartVueButton.description%"
+				},
+				"restart-vscode-server.showRestartOXCButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showRestartOXCButton.description%"
 				}
 			}
 		}

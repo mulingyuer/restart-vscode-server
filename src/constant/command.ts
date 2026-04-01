@@ -16,3 +16,6 @@ export const RESTART_ESLINT_SERVICE_COMMAND = "restart-vscode-server.restartESLi
 
 /** 重启 Vue 服务命令 */
 export const RESTART_VUE_SERVICE_COMMAND = "restart-vscode-server.restartVueService";
+
+/** 重启 OXC 服务命令 */
+export const RESTART_OXC_SERVICE_COMMAND = "restart-vscode-server.restartOXCService";

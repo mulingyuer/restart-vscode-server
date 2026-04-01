@@ -1,7 +1,7 @@
 /*
  * @Author: mulingyuer
  * @Date: 2026-03-29 16:10:23
- * @LastEditTime: 2026-03-29 19:31:41
+ * @LastEditTime: 2026-04-01 20:55:25
  * @LastEditors: mulingyuer
  * @Description: 重启 TypeScript 服务状态栏按钮
  * @FilePath: \restart-vscode-server\src\status-bar\restart-ts-server.ts
@@ -88,6 +88,12 @@ export class RestartTsServerButton implements StatusBarButton {
 		vscode.workspace.onDidOpenTextDocument(this.updateVisibility, this, this.contextDisposables);
 	}
 
+	/** 清理上下文监听器 */
+	private clearContextWatchers(): void {
+		this.contextDisposables.forEach((d) => d.dispose());
+		this.contextDisposables = [];
+	}
+
 	show(): void {
 		this.button.show();
 		this.isShown = true;
@@ -100,8 +106,7 @@ export class RestartTsServerButton implements StatusBarButton {
 
 	dispose(): void {
 		this.button.dispose();
-		this.contextDisposables.forEach((d) => d.dispose());
-		this.contextDisposables = [];
+		this.clearContextWatchers();
 		this.settingDisposables.forEach((d) => d.dispose());
 		this.settingDisposables = [];
 	}
@@ -171,6 +176,8 @@ export class RestartTsServerButton implements StatusBarButton {
 			const configAllows = getExtensionConfiguration<boolean>(SHOW_TS_STATUS_BUTTON_SETTING, true);
 			if (configAllows) {
 				this.registerContextWatchers();
+			} else {
+				this.clearContextWatchers();
 			}
 		}
 	}, 150);

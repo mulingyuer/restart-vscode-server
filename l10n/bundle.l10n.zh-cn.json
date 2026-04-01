@@ -13,5 +13,10 @@
 	"error.vueServiceRestartFailed": "重启 Vue 服务失败：{0}",
 	"info.vueServiceRestarted": "Vue 服务已重启",
 	"statusBar.restartVue.label": "重启 Vue",
-	"statusBar.restartVue.tooltip": "点击重启 Vue 服务"
+	"statusBar.restartVue.tooltip": "点击重启 Vue 服务",
+	"error.oxcExtensionNotActive": "OXC 插件未启用或未激活，请先安装并启用 OXC 插件",
+	"error.oxcServiceRestartFailed": "重启 OXC 服务失败：{0}",
+	"info.oxcServiceRestarted": "OXC 服务已重启",
+	"statusBar.restartOXC.label": "重启 OXC",
+	"statusBar.restartOXC.tooltip": "点击重启 OXC 服务"
 }
