@@ -18,5 +18,8 @@
 	"error.oxcServiceRestartFailed": "Failed to restart OXC service: {0}",
 	"info.oxcServiceRestarted": "OXC service has been restarted",
 	"statusBar.restartOXC.label": "Restart OXC",
-	"statusBar.restartOXC.tooltip": "Click to restart OXC service"
+	"statusBar.restartOXC.tooltip": "Click to restart OXC service",
+	"error.vscodeWindowRestartFailed": "Failed to restart VS Code window: {0}",
+	"statusBar.restartVscodeWindow.label": "Reload",
+	"statusBar.restartVscodeWindow.tooltip": "Click to reload VS Code window"
 }

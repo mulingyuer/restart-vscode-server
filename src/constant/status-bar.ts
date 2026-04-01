@@ -19,3 +19,6 @@ export const SHOW_VUE_STATUS_BUTTON_SETTING = "showRestartVueButton";
 
 /** 是否显示重启 OXC 服务按钮 */
 export const SHOW_OXC_STATUS_BUTTON_SETTING = "showRestartOXCButton";
+
+/** 是否显示重启 VS Code 窗口按钮 */
+export const SHOW_RESTART_VSCODE_WINDOW_BUTTON_SETTING = "showRestartVscodeWindowButton";

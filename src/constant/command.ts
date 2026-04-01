@@ -19,3 +19,6 @@ export const RESTART_VUE_SERVICE_COMMAND = "restart-vscode-server.restartVueServ
 
 /** 重启 OXC 服务命令 */
 export const RESTART_OXC_SERVICE_COMMAND = "restart-vscode-server.restartOXCService";
+
+/** 重启 VS Code 窗口命令 */
+export const RESTART_VSCODE_WINDOW_COMMAND = "restart-vscode-server.restartVscodeWindow";

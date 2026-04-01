@@ -18,5 +18,8 @@
 	"error.oxcServiceRestartFailed": "重启 OXC 服务失败：{0}",
 	"info.oxcServiceRestarted": "OXC 服务已重启",
 	"statusBar.restartOXC.label": "重启 OXC",
-	"statusBar.restartOXC.tooltip": "点击重启 OXC 服务"
+	"statusBar.restartOXC.tooltip": "点击重启 OXC 服务",
+	"error.vscodeWindowRestartFailed": "重启 VS Code 窗口失败：{0}",
+	"statusBar.restartVscodeWindow.label": "重启",
+	"statusBar.restartVscodeWindow.tooltip": "点击重启 VS Code 窗口"
 }
