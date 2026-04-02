@@ -1,7 +1,7 @@
 /*
  * @Author: mulingyuer
  * @Date: 2026-03-29 15:37:39
- * @LastEditTime: 2026-04-02 20:02:40
+ * @LastEditTime: 2026-04-02 20:36:40
  * @LastEditors: mulingyuer
  * @Description: 工具方法
  * @FilePath: \restart-vscode-server\src\utils\tools.ts
@@ -42,9 +42,11 @@ export function debounce<T extends (...args: any[]) => any>(
 	return function (this: any, ...args: Parameters<T>) {
 		if (timeoutId) clearTimeout(timeoutId);
 		timeoutId = setTimeout(() => {
-			Promise.resolve(fn.apply(this, args)).catch((error) => {
-				console.error("防抖函数执行失败:", error);
-			});
+			Promise.resolve()
+				.then(() => fn.apply(this, args))
+				.catch((error) => {
+					console.error("防抖函数执行失败:", error);
+				});
 		}, delay);
 	};
 }
