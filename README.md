@@ -1,4 +1,4 @@
-﻿# restart-vscode-server
+# restart-vscode-server
 
 `restart-vscode-server` 是一个轻量的 VS Code 扩展，用于快速重启常见语言服务与编辑器相关服务，减少因为缓存、配置更新或服务异常导致的开发中断。
 
