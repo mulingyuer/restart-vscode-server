@@ -62,7 +62,7 @@ export function createRestartOXCService() {
 			if (successCount > 0) {
 				vscode.window.showInformationMessage(vscode.l10n.t("info.oxcServiceRestarted"));
 			} else {
-				vscode.window.showErrorMessage(vscode.l10n.t("error.oxcExtensionNotActive"));
+				vscode.window.showErrorMessage(vscode.l10n.t("error.oxcRestartCommandNotFound"));
 			}
 		} catch (error) {
 			const errorMessage = error instanceof Error ? error.message : String(error);
