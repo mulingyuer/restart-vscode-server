@@ -1,7 +1,7 @@
 /*
  * @Author: mulingyuer
  * @Date: 2026-03-29 16:14:09
- * @LastEditTime: 2026-03-29 16:14:09
+ * @LastEditTime: 2026-04-03 09:38:10
  * @LastEditors: mulingyuer
  * @Description: 命令相关常量定义
  * @FilePath: \restart-vscode-server\src\constant\command.ts
@@ -24,5 +24,4 @@ export const RESTART_OXC_SERVICE_COMMAND = "restart-vscode-server.restartOXCServ
 export const RESTART_VSCODE_WINDOW_COMMAND = "restart-vscode-server.restartVscodeWindow";
 
 /** 重启插件服务命令 */
-export const RESTART_EXTENSION_SERVICE_COMMAND =
-	"restart-vscode-server.restartExtensionService";
+export const RESTART_EXTENSION_SERVICE_COMMAND = "restart-vscode-server.restartExtensionService";
